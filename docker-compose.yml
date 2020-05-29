@@ -3,7 +3,7 @@ version: "3"
 
 services:
   php:
-    image: surreymagpie/php-apache:7.3.1
+    image: surreymagpie/php-apache:7.3
     environment:
       APACHE_DOCUMENT_ROOT: /var/www/html/web
     ports:
@@ -27,5 +27,20 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
+  d7_db:
+    image: mariadb:10.4
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "true"
+      MYSQL_DATABASE: drupal7
+      MYSQL_USER: drupal7
+      MYSQL_PASSWORD: drupal7
+    restart: on-failure
+    ports:
+      - "33061:3306"
+    volumes:
+      - d7cornerhouse-dentalcouk_d7_data:/var/lib/mysql
+
 volumes:
   db_data:
+  d7cornerhouse-dentalcouk_d7_data:
+    external: true
