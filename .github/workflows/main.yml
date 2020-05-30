@@ -23,6 +23,10 @@ jobs:
       - name: Run composer install
         run: composer install --no-dev
 
+      # TODO: remove this step once migrations are completed
+      - name: Setup D7 volume
+        run: docker volume create --name=d7cornerhouse-dentalcouk_d7_data
+
       - name: Start Docker containers
         run: docker-compose up -d
 

@@ -30,6 +30,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
+  # TODO: remove this service once migrations are completed
   d7_db:
     image: mariadb:10.4
     environment:
