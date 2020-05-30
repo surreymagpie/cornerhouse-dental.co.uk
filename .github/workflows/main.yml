@@ -1,0 +1,37 @@
+name: CI
+
+# Controls when the action will run. Triggers the workflow on pushes to master
+# branch and any pull request. Also a 03:00 each Sunday.
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  schedule:
+    - cron: "0 3 * * 6"
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Run composer install
+        run: composer install --no-dev
+
+      # TODO: remove this step once migrations are completed
+      - name: Setup D7 volume
+        run: docker volume create --name=d7cornerhouse-dentalcouk_d7_data
+
+      - name: Start Docker containers
+        run: docker-compose up -d
+
+      - name: Install Drupal 8 site
+        run: |
+          docker-compose exec -T -u www-data php bash -c 'drush site:install \
+          minimal --db-url="mysql://drupal:drupal@db:3306/drupal" \
+           --site-name="Cornerhouse Dental Practice" --existing-config -y'

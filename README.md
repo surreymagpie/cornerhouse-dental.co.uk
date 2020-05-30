@@ -1,5 +1,7 @@
 # Codebase for cornerhouse-dental.co.uk
 
+![CI](https://github.com/surreymagpie/cornerhouse-dental.co.uk/workflows/CI/badge.svg)
+
 This is the codebase for [Cornerhouse Dental Practice](www.cornerhouse-dental.co.uk)
 
 ## Local environment
