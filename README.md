@@ -4,13 +4,19 @@
 
 This is the codebase for [Cornerhouse Dental Practice](www.cornerhouse-dental.co.uk)
 
-## Local environment
+## Local development environment setup
 
-Development using docker using my [surreymagpie/php-apache](https://www.github.com/surreymagpie/php-apache) image.
+Development using docker using my [surreymagpie/php-apache](https://www.github.com/surreymagpie/php-apache) image. The docker environment can be initiated with:
 
-The docker environment can be initiated with:
+```bash
+  docker-compose up -d
+```
 
-`docker-compose up -d`
+If you have Composer and PHP installed locally, you can install the Drupal project and its dependencies by running `composer install` on your host machine; otherwise, once the container is started as above, you can do it within the PHP container as follows:
+
+```bash
+  docker-compose exec -u www-data php bash -c 'composer install'
+```
 
 then the site is available at [http://localhost:8080](http://localhost:8080).
 
