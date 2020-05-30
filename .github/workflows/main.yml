@@ -32,6 +32,6 @@ jobs:
 
       - name: Install Drupal 8 site
         run: |
-          docker-compose exec -u www-data php bash -c 'drush site:install \
+          docker-compose exec -T -u www-data php bash -c 'drush site:install \
           minimal --db-url="mysql://drupal:drupal@db:3306/drupal" \
            --site-name="Cornerhouse Dental Practice" --existing-config -y'
