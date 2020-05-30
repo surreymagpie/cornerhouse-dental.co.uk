@@ -6,6 +6,8 @@ services:
     image: surreymagpie/php-apache:7.3
     environment:
       APACHE_DOCUMENT_ROOT: /var/www/html/web
+      COMPOSER_CACHE_DIR: /tmp
+      COMPOSER_MEMORY_LIMIT: -1
     ports:
       - "8080:80"
     restart: on-failure
@@ -13,6 +15,7 @@ services:
       - db
     volumes:
       - ./:/var/www/html:rw,delegated
+      - $HOME/.cache/composer:/tmp
 
   db:
     image: mariadb:10.4
