@@ -1,4 +1,4 @@
-uuid: 3ae6ef6c-a681-4841-be9d-17bf3b0ba7c9
+uuid: b9f2bece-c09f-4dd9-98c8-ff8f7f1cb974
 langcode: en
 status: true
 dependencies:
@@ -7,12 +7,12 @@ dependencies:
   module:
     - system
   theme:
-    - stark
+    - dentist
 _core:
   default_config_hash: uUF2GYN2x5fcmOu26M-gwqUA-yVWMDD_MRmnYfmPzlM
-id: stark_tools
-theme: stark
-region: sidebar_first
+id: dentist_tools
+theme: dentist
+region: navbar
 weight: 0
 provider: null
 plugin: 'system_menu_block:tools'
