@@ -1,13 +1,13 @@
-uuid: caaea8d2-572e-425e-9908-f097b3120a63
+uuid: 3e9f60d1-efab-426c-b70c-45fe09dfa275
 langcode: en
 status: true
 dependencies:
   theme:
-    - stark
+    - dentist
 _core:
   default_config_hash: 8yptDf6WrXxeyevUz4nP5vfr7BtxQqCBMninhV2IJ1g
-id: stark_page_title
-theme: stark
+id: dentist_page_title
+theme: dentist
 region: content
 weight: -30
 provider: null
