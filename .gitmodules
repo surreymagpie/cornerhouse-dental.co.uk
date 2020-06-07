@@ -1,0 +1,3 @@
+[submodule "web/themes/custom/dentist"]
+	path = web/themes/custom/dentist
+	url = git@github.com:surreymagpie/dentist.git
