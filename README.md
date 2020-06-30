@@ -35,7 +35,7 @@ The site can be reinstalled using:
 The migrations were generated using the command:
 
 ```bash
-  docker-compose exec -u www-data php bash -c 'drush migrate:upgrade --legacy-db-key=drupal7 --legacy-root=../d7.cornerhouse-dental.co.uk --configure-only'
+  docker-compose exec -u www-data php bash -c 'drush migrate:upgrade --legacy-db-key=drupal7 --legacy-root=https://www.cornerhouse-dental.co.uk --configure-only'
 ```
 
 ## Configuration
